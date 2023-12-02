@@ -111,6 +111,9 @@ data "aws_ami" "ubuntu" {
 resource "aws_eip" "hashicat" {
   instance = aws_instance.hashicat.id
   vpc      = true
+  tags = {
+    Biilable = "true"
+}
 }
 
 resource "aws_eip_association" "hashicat" {
